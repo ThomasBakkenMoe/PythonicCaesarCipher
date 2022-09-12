@@ -4,7 +4,6 @@ import sys
 # CONSTANTS
 help_message = "A very helpful message"
 usage = "CaesarCipher.py <SHIFT_NUMBER> <INPUT_FILE_PATH> [-d] [-h]"
-special_characters_unicodes = [ord('æ'), ord('ø'), ord('å'), ord('Æ'), ord('Ø'), ord('Å')]
 LETTERS_IN_ALPHABET = 29
 
 # Initialize argument parser
@@ -43,8 +42,6 @@ reader.close()
 output = ""
 skip = False
 
-print(text)
-
 if args.Decrypt:
     for i in range(len(text)):
         char = text[i]
@@ -52,8 +49,7 @@ if args.Decrypt:
         new_char_unicode = char_unicode - shift_number
 
         # Exclude special characters
-        if (char_unicode not in range(65, 90 + 1)) and (char_unicode not in range(97, 122 + 1)) and (
-                char_unicode not in special_characters_unicodes):
+        if (char_unicode not in range(65, 90 + 1)) and (char_unicode not in range(97, 122 + 1)):
             output += char
             continue
 
