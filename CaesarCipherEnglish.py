@@ -4,7 +4,7 @@ import sys
 # CONSTANTS
 help_message = "A very helpful message"
 usage = "CaesarCipher.py <SHIFT_NUMBER> <INPUT_FILE_PATH> [-d] [-h]"
-LETTERS_IN_ALPHABET = 29
+LETTERS_IN_ALPHABET = 26
 
 # Initialize argument parser
 parser = argparse.ArgumentParser(description=help_message, usage=usage)
@@ -75,10 +75,11 @@ else:
             output += char
             continue
 
-        if (char.isupper()):
+        if char.isupper():
             if new_char_unicode > 90:
                 new_char_unicode = new_char_unicode - 90 + 65 - 1
             output += chr(new_char_unicode)
+
         # Lower Case
         else:
             if new_char_unicode > 122:
