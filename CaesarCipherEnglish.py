@@ -71,8 +71,7 @@ else:
         new_char_unicode = char_unicode + shift_number
 
         # Exclude special characters
-        if (char_unicode not in range(65, 90 + 1)) and (char_unicode not in range(97, 122 + 1)) and (
-                char_unicode not in special_characters_unicodes):
+        if (char_unicode not in range(65, 90 + 1)) and (char_unicode not in range(97, 122 + 1)):
             output += char
             continue
 
